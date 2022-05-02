@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* .date-selector {
+  background: none;
+  border: 1px solid green;
+  border-radius: 30px;
+  min-width: 50px;
+  height: 50px;
+  margin: 0 3px;
+}
+
+.today {
+  background-color: green;
+  color: white;
+}
+
+.previousDates {
+}
+
+.month-year {
+  text-align: left;
+  margin: 15px 20px;
+}
+
+.dates {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.year-dates {
+  width: 408px;
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+
+.calender {
+  display: flex;
+}
+
+.month-year {
+  align-self: flex-start;
+  z-index: 3;
+  font-size: 15px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: max-content;
+  margin: 0 14px 10px 0;
+} */

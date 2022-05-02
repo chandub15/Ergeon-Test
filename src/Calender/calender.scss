@@ -1,0 +1,95 @@
+.horizontal-calender-root {
+  border: 2px solid;
+  margin: 50px auto;
+  width: 500px;
+  .horizontal-calender{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .title {
+    flex: 1 1 100%;
+    margin: 30px 0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .custom-date-selection{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    .start-date,.end-date{
+      padding: 0 30px;
+    }
+    .start-date-input,.end-date-input{
+      width: 150px;
+      height: 30px;
+    }
+  }
+  .calender {
+    // border: 2px solid;
+    display: flex;
+    .prev-dates,
+    .next-dates {
+      cursor: pointer;
+      background: none;
+      border: none;
+      margin: 50px 0px;
+      filter: invert(22%) sepia(100%) saturate(3414%) hue-rotate(100deg) brightness(95%) contrast(107%);
+    }
+    .all-dates {
+      width: 360px;
+      display: flex;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      .month-year {
+        align-self: flex-start;
+        z-index: 3;
+        font-size: 15px;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: max-content;
+        // margin: 0 14px 10px 0;
+        text-align: left;
+        margin: 15px 5px;
+      }
+      .dates {
+        display: flex;
+        scroll-behavior: smooth;
+        .date-selector {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          margin: 0 0 0 4px;
+          width: 45px;
+          height: 45px;
+          flex-shrink: 0;
+          background: none;
+          border: none;
+          &.selected-date-highlight{
+            background: rgb(44, 158, 44);
+            color: white;
+          }
+          &:not(.selected-date-highlight).today {
+            border: 2px solid rgb(44, 158, 44);
+            color: rgb(44, 158, 44);
+          }
+          .day {
+            font-size: 12px;
+            margin: 6px 0 0 0;
+          }
+          .date {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .selected-date{
+    flex: 1 1 100%;
+    margin: 30px 0;
+    font-size: 20px;
+  }
+}
