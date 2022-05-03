@@ -17,13 +17,16 @@ export default function Calender() {
   useEffect(() => {
     function updateCurrentDate() {
       let date = new Date();
-      
       setTodayDate(date);
       setYear(date.getFullYear());
       setMonthIndex(date.getMonth());
+      setTimeout(() => {
+        datesRef.current.scrollLeft += currentDateRef.current.offsetLeft - datesRef.current.offsetLeft ;
+      }, 100);
     }
 
     updateCurrentDate();
+
   }, []);
 
   useEffect(() => {
@@ -110,9 +113,9 @@ export default function Calender() {
                       {viewableDates[monthIndex].map((date) => {
                         return (
                           <button
-                            ref={(ref) => setRef(ref, todayDate.getTime() === date.getTime())}
+                            ref={(ref)=>setRef(ref,getFormattedDate(todayDate) === getFormattedDate(date))}
                             id={date}
-                            className={`date-selector ${selectedDate && getFormattedDate(selectedDate) === getFormattedDate(date) ? `selected-date-highlight` : ``} ${getFormattedDate(todayDate)  === getFormattedDate(date) ? `today` : ``}`}
+                            className={`date-selector ${selectedDate && getFormattedDate(selectedDate) === getFormattedDate(date) ? `selected-date-highlight` : ``} ${getFormattedDate(todayDate) === getFormattedDate(date) ? `today` : ``}`}
                             key={date}
                             onClick={(event) => selectDate(date)}
                           >
@@ -131,7 +134,9 @@ export default function Calender() {
             </button>
           </div>
         )}
-        <div className="selected-date">Selected Date: <b>{selectedDate ? getFormattedDate(selectedDate) : `N/A`}</b></div>
+        <div className="selected-date">
+          Selected Date: <b>{selectedDate ? getFormattedDate(selectedDate) : `N/A`}</b>
+        </div>
       </div>
     </div>
   );
