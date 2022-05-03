@@ -17,10 +17,8 @@ export default function Calender() {
   useEffect(() => {
     function updateCurrentDate() {
       let date = new Date();
-
-      let today = new Date(date.getFullYear(), date.getMonth(), 1);
-
-      setTodayDate(today);
+      
+      setTodayDate(date);
       setYear(date.getFullYear());
       setMonthIndex(date.getMonth());
     }
@@ -114,7 +112,7 @@ export default function Calender() {
                           <button
                             ref={(ref) => setRef(ref, todayDate.getTime() === date.getTime())}
                             id={date}
-                            className={`date-selector ${selectedDate && selectedDate.getTime() === date.getTime() ? `selected-date-highlight` : ``} ${todayDate.getTime() === date.getTime() ? `today` : ``}`}
+                            className={`date-selector ${selectedDate && getFormattedDate(selectedDate) === getFormattedDate(date) ? `selected-date-highlight` : ``} ${getFormattedDate(todayDate)  === getFormattedDate(date) ? `today` : ``}`}
                             key={date}
                             onClick={(event) => selectDate(date)}
                           >
